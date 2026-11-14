@@ -73,42 +73,44 @@ export function Navbar({
           </span>
         </a>
 
-        <nav
-          className="hidden md:flex items-center text-[19px] lg:text-[21px] font-normal tracking-[-0.01em] text-[#17232B]"
-          aria-label="Main navigation"
-        >
-          {NAV_LINKS.map((link, index) => (
-            <span key={link.id} className="inline-flex items-baseline whitespace-nowrap">
-              <a
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(link.id);
-                }}
-                className="text-[#17232B] hover:text-[#35434B] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17232B]"
-              >
-                {link.label}
-              </a>
-              {index < NAV_LINKS.length - 1 && (
-                <span className="whitespace-pre text-[#35434B]" aria-hidden="true">
-                  ,{' '}
-                </span>
-              )}
-            </span>
-          ))}
-        </nav>
+        <div className="hidden md:flex items-center gap-5 lg:gap-8 shrink-0">
+          <nav
+            className="flex items-center text-[17px] lg:text-[21px] font-normal tracking-[-0.01em] text-[#17232B] whitespace-nowrap"
+            aria-label="Main navigation"
+          >
+            {NAV_LINKS.map((link, index) => (
+              <span key={link.id} className="inline-flex items-baseline whitespace-nowrap">
+                <a
+                  href={link.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(link.id);
+                  }}
+                  className="text-[#17232B] hover:text-[#35434B] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17232B]"
+                >
+                  {link.label}
+                </a>
+                {index < NAV_LINKS.length - 1 && (
+                  <span className="whitespace-pre text-[#35434B]" aria-hidden="true">
+                    ,{' '}
+                  </span>
+                )}
+              </span>
+            ))}
+          </nav>
 
-        <a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            onCloseMenu();
-            onSelectPanel('contact');
-          }}
-          className="hidden md:inline-block text-[19px] lg:text-[21px] font-medium tracking-[-0.01em] text-[#17232B] underline underline-offset-4 decoration-[#17232B]/50 hover:text-[#35434B] hover:decoration-[#35434B] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17232B]"
-        >
-          Get in touch
-        </a>
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              onCloseMenu();
+              onSelectPanel('contact');
+            }}
+            className="inline-block text-[17px] lg:text-[21px] font-medium tracking-[-0.01em] text-[#17232B] underline underline-offset-4 decoration-[#17232B]/50 hover:text-[#35434B] hover:decoration-[#35434B] transition-colors whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17232B]"
+          >
+            Get in touch
+          </a>
+        </div>
 
         <button
           type="button"

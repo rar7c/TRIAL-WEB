@@ -8,11 +8,10 @@ interface HeroSectionProps {
 
 const CONTACT_EMAIL = 'rahim2best0noob07@gmail.com';
 
-const TYPEWRITER_TEXT =
-  'A little underdressed?\nWe’ve got you covered.\nDiscover pieces worth wearing. Good style starts here.';
+const SUBTITLE_TEXT = 'Your hub to perfection.';
 
 export function HeroSection({ buttons }: HeroSectionProps) {
-  const { displayed, done } = useTypewriter(TYPEWRITER_TEXT, 38, 600);
+  const { displayed, done } = useTypewriter(SUBTITLE_TEXT, 38, 600);
   const [pillsVisible, setPillsVisible] = useState(false);
   const [copied, setCopied] = useState(false);
 
@@ -42,7 +41,7 @@ export function HeroSection({ buttons }: HeroSectionProps) {
     <main className="relative z-[1] h-screen flex flex-col justify-end pb-12 md:justify-center md:pb-0 px-5 sm:px-8 md:px-10 overflow-hidden">
       <div className="max-w-xl relative z-10">
         <p
-          className="pointer-events-none select-none mb-5 sm:mb-6 text-[clamp(18px,3.2vw,24px)] leading-[1.35] font-normal tracking-[-0.01em] text-[#35434B] blur-[4px]"
+          className="pointer-events-none select-none mb-5 sm:mb-6 pl-[3px] text-[clamp(18px,3.2vw,24px)] leading-[1.35] font-normal tracking-[-0.01em] text-[#35434B] blur-[4px]"
           aria-hidden="true"
         >
           Hey there, meet A.R.I.A,
@@ -50,15 +49,23 @@ export function HeroSection({ buttons }: HeroSectionProps) {
           Mainframe&apos;s Adaptive Response Interface Agent
         </p>
 
-        <p className="text-[#17232B] mb-5 sm:mb-6 text-[clamp(20px,3.6vw,27px)] leading-[1.35] font-medium tracking-[-0.015em] min-h-[54px] whitespace-pre-line">
-          {displayed}
-          {!done && (
-            <span
-              className="inline-block w-[2px] h-[1.1em] bg-[#17232B] align-middle ml-[2px] animate-[blink_1s_step-end_infinite]"
-              aria-hidden="true"
-            />
-          )}
-        </p>
+        <div className="mb-5 sm:mb-6 pl-[3px]">
+          <h1
+            className="text-[clamp(44px,8vw,76px)] leading-[0.95] font-extrabold tracking-[-0.03em] text-[#17232B] mb-2 sm:mb-3"
+            style={{ fontFamily: "'Syne', var(--font-heading)" }}
+          >
+            SKIRT
+          </h1>
+          <p className="text-[#17232B] text-[clamp(18px,3vw,24px)] leading-[1.35] font-normal tracking-[-0.01em] min-h-[32px]">
+            {displayed}
+            {!done && (
+              <span
+                className="inline-block w-[2px] h-[1.1em] bg-[#17232B] align-middle ml-[2px] animate-[blink_1s_step-end_infinite]"
+                aria-hidden="true"
+              />
+            )}
+          </p>
+        </div>
 
         <div
           className={`flex flex-wrap gap-y-1 transition-[opacity,transform] duration-[400ms] ease-out ${

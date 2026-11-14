@@ -51,17 +51,17 @@ export default function App() {
     () => [
       {
         id: 'customize-clothes',
-        label: 'CUSTOMIZE CLOTHES',
+        label: 'CLOTHING',
         onClick: () => navigateTo('customize'),
       },
       {
         id: 'our-exclusives',
-        label: 'OUR EXCLUSIVES',
+        label: 'GAMING',
         onClick: () => navigateTo('exclusives'),
       },
       {
         id: 'drop-preview',
-        label: 'DROP PREVIEW',
+        label: 'COMING SOON',
         onClick: () => navigateTo('drop-preview'),
       },
     ],
