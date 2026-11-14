@@ -1,0 +1,6 @@
+{
+  "name": "Mainframe",
+  "description": "Mainframe — Creative agency and adaptive interface studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
